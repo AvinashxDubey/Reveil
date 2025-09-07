@@ -1,0 +1,33 @@
+# Node.js / React
+node_modules/
+build/
+dist/
+.env*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python / FastAPI
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+.venv/
+venv/
+env/
+ENV/
+.Python
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# VSCode
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
