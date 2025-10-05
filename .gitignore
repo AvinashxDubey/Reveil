@@ -31,3 +31,12 @@ ENV/
 # OS files
 .DS_Store
 Thumbs.db
+
+# backend folder specific
+*.pyc
+__pycache__/
+db.sqlite3
+*.pkl
+*.env
+/staticfiles/
+media/
