@@ -1,0 +1,11 @@
+[
+  "account_age_days",
+  "hashtag_count",
+  "username_length",
+  "digit_count",
+  "tweet_length",
+  "retweet_per_hashtag",
+  "Mention Count",
+  "Follower Count",
+  "Verified"
+]
