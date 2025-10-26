@@ -9,13 +9,13 @@ pip install -r requirements.txt
 
 ### 2. Create `.env` File
 
-Create `.env` in the `backend/` folder:
-
 Generate a secret key:
 
 ```cmd
 python -c "import secrets; print(secrets.token_urlsafe(32))"
 ```
+
+Create `.env` in the `backend/` folder:
 
 ```env
 SECRET_KEY=paste-it-here
