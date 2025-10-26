@@ -40,3 +40,6 @@ db.sqlite3
 *.env
 /staticfiles/
 media/
+
+# database
+*.db
