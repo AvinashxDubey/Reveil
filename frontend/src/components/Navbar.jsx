@@ -41,7 +41,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-logo">
         <Search className="navbar-icon" size={24} />
-        <span className="navbar-brand">DeFake</span>
+        <span className="navbar-brand">Reveil</span>
       </div>
 
       <ul className="navbar-links">

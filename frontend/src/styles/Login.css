@@ -92,6 +92,7 @@
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
+  color: #374151; /* dark gray text for visibility */
 }
 
 .btn-google:hover {
@@ -102,6 +103,7 @@
   width: 22px;
   height: 22px;
 }
+
 
 .signup-text {
   margin-top: 1.2rem;
