@@ -1,0 +1,66 @@
+:root {
+  --nblue: #1557d6;
+  --soft-blue: #eaf2ff;
+  --card-bg: #ffffff;
+  --muted: #6b7280;
+}
+
+.wrap {
+  font-family: Inter, system-ui, Arial, sans-serif;
+  color: var(--nblue);
+  background: linear-gradient(90deg, var(--soft-blue), #dfeeff);
+  min-height: 100vh;
+}
+
+.hero {
+  text-align: center;
+  padding: 5rem 1rem 3rem;
+}
+
+.title {
+  font-size: clamp(2rem, 6vw, 4rem);
+  margin: 0 0 0.5rem;
+  font-weight: 800;
+  color: var(--nblue);
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta {
+  display: inline-block;
+  background: var(--nblue);
+  color: white;
+  padding: 0.7rem 1.1rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(21, 87, 214, 0.15);
+  text-decoration: none;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem 6rem;
+}
+
+.formCard {
+  width: min(980px, 95%);
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 2rem 2.2rem;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(21, 87, 214, 0.06);
+}
+
+.formTitle {
+  text-align: center;
+  margin: 0 0 1.25rem 0;
+  color: #111827;
+  font-size: 1.4rem;
+}

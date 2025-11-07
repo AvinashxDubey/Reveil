@@ -1,0 +1,137 @@
+.navbar {
+  width: 100%;
+  height: 45px;
+  padding: 0 2rem;
+  background: rgba(10, 10, 10, 0.14);
+  backdrop-filter: blur(6px);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.navbar-icon {
+  width: 20px;
+  height: 20px;
+  color: #ff4c8b;
+}
+
+.navbar-brand {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: inherit;
+  margin-left: 4px;
+  line-height: 1;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.navbar-links li a:hover,
+.navbar-links li a:focus {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ff4c8b;
+}
+
+.logout-btn {
+  background-color: transparent;
+  border: 1px solid #ff5f5f;
+  color: #ff5f5f;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.logout-btn:hover {
+  background-color: #ff5f5f;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0 1rem;
+    height: 52px;
+  }
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  .navbar-links {
+    gap: 0.6rem;
+  }
+  .navbar-links li a {
+    font-size: 0.92rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.95);
+    padding: 1rem 0;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-links li a,
+  .logout-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem;
+  }
+}
