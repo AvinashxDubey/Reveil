@@ -8,7 +8,7 @@ class Settings(BaseSettings):
 
     secret_key: str
     access_token_expire_minutes: int = 30
-    active_model: str = 'mlp'
+    active_model: str = "mlp_model.pkl"
     
     debug: bool = False
     

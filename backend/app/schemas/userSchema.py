@@ -20,7 +20,6 @@ class UserProfile(BaseModel):
     id: int
     email: str
     name: str
-    is_active: bool
     created_at: datetime
     
     class Config:

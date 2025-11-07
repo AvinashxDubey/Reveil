@@ -1,2 +1,13 @@
 fastapi
 uvicorn[standard]
+sqlalchemy
+python-jose[cryptography]
+passlib[bcrypt]
+pydantic
+pydantic-settings
+joblib
+pandas
+numpy
+scikit-learn
+python-dotenv
+email-validator

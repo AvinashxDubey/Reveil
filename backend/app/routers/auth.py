@@ -1,7 +1,7 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, Header, status
 from sqlalchemy.orm import Session
 from app.core.database import get_db
-from app.core.security import verify_password, get_password_hash, create_access_token
+from app.core.security import verify_password, get_password_hash, create_access_token, get_token_data
 from app.schemas.userSchema import UserRegister, UserLogin, Token, UserProfile
 from app.models.user import User
 
@@ -9,8 +9,6 @@ router = APIRouter(prefix="/auth", tags=["authentication"])
 
 @router.post("/register", response_model=dict)
 def register_user(user_data: UserRegister, db: Session = Depends(get_db)):
-    """Register a new user"""
-    # Validate password length
     if len(user_data.password) < 8:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
@@ -23,7 +21,6 @@ def register_user(user_data: UserRegister, db: Session = Depends(get_db)):
             detail="Password cannot exceed 72 characters"
         )
     
-    # Check if user already exists
     existing_user = db.query(User).filter(User.email == user_data.email).first()
     if existing_user:
         raise HTTPException(
@@ -31,7 +28,6 @@ def register_user(user_data: UserRegister, db: Session = Depends(get_db)):
             detail="Email already registered"
         )
     
-    # Create new user
     try:
         hashed_password = get_password_hash(user_data.password)
     except ValueError as e:
@@ -57,9 +53,7 @@ def register_user(user_data: UserRegister, db: Session = Depends(get_db)):
     }
 
 @router.post("/login", response_model=Token)
-def login_user(user_data: UserLogin, db: Session = Depends(get_db)):
-    """Login user and return JWT token"""
-    
+def login_user(user_data: UserLogin, db: Session = Depends(get_db)):    
     if not user_data.email or not user_data.password:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
@@ -74,12 +68,23 @@ def login_user(user_data: UserLogin, db: Session = Depends(get_db)):
             detail="Invalid email or password"
         )
     
-    if not user.is_active:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Account is disabled"
-        )
-    
-    token = create_access_token({"email": user.email})
+    token = create_access_token(user.id, user.email)
     
     return {"access_token": token, "token_type": "bearer"}
+
+@router.get("/profile", response_model=UserProfile)
+def get_profile(
+    token_data: dict = Depends(get_token_data),
+    db: Session = Depends(get_db)
+):
+    user_id = token_data["user_id"]
+    
+    user = db.query(User).filter(User.id == user_id).first()
+    
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User not found"
+        )
+    
+    return user
