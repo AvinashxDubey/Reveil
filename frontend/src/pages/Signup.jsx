@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
 import { axiosInstance, API } from "../api";
 import "../styles/Signup.css";
 
@@ -10,10 +9,6 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-
-  const googleAuth = () => {
-    alert("Google OAuth is not set up on the backend. Implement /auth/google in FastAPI first.");
-  };
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -37,7 +32,11 @@ function Signup() {
       navigate("/dashboard");
     } catch (err) {
       console.error("Signup error:", err);
-      const message = err?.response?.data?.detail || err?.response?.data?.message || err.message || "Signup failed";
+      const message =
+        err?.response?.data?.detail ||
+        err?.response?.data?.message ||
+        err.message ||
+        "Signup failed";
       alert(message);
     } finally {
       setLoading(false);
@@ -79,11 +78,6 @@ function Signup() {
 
           <button type="submit" className="btn-primary" disabled={loading}>
             {loading ? "Signing up..." : "Sign up"}
-          </button>
-
-          <button type="button" className="btn-google" onClick={googleAuth}>
-            <FcGoogle size={20} />
-            <span>Sign up with Google</span>
           </button>
 
           <p className="login-text">
