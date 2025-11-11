@@ -37,7 +37,7 @@ function Homepage() {
         setTimeout(resolve, timeout);
       });
 
-const NAV_H = 70; // match navbar height in px
+const NAV_H = 70; 
 const obsOptions = {
   threshold: 0.15,
   root: null,
@@ -159,19 +159,19 @@ const obsOptions = {
           <div className="cards-row">
             <div className="card">
               <img src={about1} alt="About 1" />
-              <p className="card-name">Alice Johnson</p>
+              <p className="card-name">Paojangam Kipgen</p>
             </div>
             <div className="card">
               <img src={about2} alt="About 2" />
-              <p className="card-name">David Smith</p>
+              <p className="card-name">Avinash Dubey</p>
             </div>
             <div className="card">
               <img src={about3} alt="About 3" />
-              <p className="card-name">Sophia Lee</p>
+              <p className="card-name">Jatin Sood</p>
             </div>
             <div className="card">
               <img src={about4} alt="About 4" />
-              <p className="card-name">Michael Brown</p>
+              <p className="card-name">Dimple</p>
             </div>
           </div>
         </section>

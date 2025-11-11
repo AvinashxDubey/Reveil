@@ -1,4 +1,3 @@
-// src/components/Signup.jsx
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
@@ -25,10 +24,7 @@ function Signup() {
     setLoading(true);
     try {
       const res = await axiosInstance.post(API.REGISTER, { name, email, password });
-      // backend returns message and user info: { message, name, email }
       alert(res.data?.message || "Registered");
-      // after signup, optionally log in automatically by calling /auth/login
-      // we'll try to login automatically for convenience:
       try {
         const loginRes = await axiosInstance.post(API.LOGIN, { email, password });
         const accessToken = loginRes?.data?.access_token;

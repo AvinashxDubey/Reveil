@@ -1,4 +1,3 @@
-// src/pages/AuthPage.jsx
 import React, { useState } from 'react';
 import AuthCard from '../components/AuthCard';
 import ProcessModal from '../components/ProcessModal';

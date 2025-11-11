@@ -26,13 +26,10 @@ function Login() {
       const accessToken = res?.data?.access_token;
       if (!accessToken) throw new Error("No access token returned by server.");
 
-      // store token for later requests
       localStorage.setItem("token", accessToken);
 
-      // Let Navbar (and other components) know user logged in
       window.dispatchEvent(new Event("authChange"));
 
-      // navigate to dashboard
       navigate("/dashboard");
     } catch (err) {
       console.error("Login error:", err);

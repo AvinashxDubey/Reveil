@@ -1,3 +1,4 @@
+/* src/components/AccountForm.css */
 .form {
   display: block;
 }
@@ -23,18 +24,26 @@
   border-radius: 6px;
   border: 1px solid rgba(16, 24, 40, 0.08);
   background: #fbfdff;
+  color: #0b1220; /* make the typed text visible */
   outline: none;
   box-shadow: inset 0 -1px 0 rgba(16, 24, 40, 0.02);
+  font-size: 0.95rem;
+  line-height: 1.2;
 }
 
 .input:focus,
 .inputSmall:focus {
-  border-color: var(--nblue);
+  border-color: var(--nblue, #1557d6);
   box-shadow: 0 4px 14px rgba(21, 87, 214, 0.08);
 }
 
 .inputSmall {
   padding: 0.8rem 0.9rem;
+}
+
+.input::placeholder,
+.inputSmall::placeholder {
+  color: #6b7280;
 }
 
 .flagsGrid {
@@ -58,7 +67,7 @@
 }
 
 .submit {
-  background: var(--nblue);
+  background: var(--nblue, #1557d6);
   color: #fff;
   border: none;
   padding: 0.75rem 1.5rem;
