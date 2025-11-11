@@ -1,0 +1,36 @@
+<!-- save as detect-icon.svg or paste inline in your HTML -->
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Fake Social Media Detection</title>
+  <desc id="desc">Chat bubble with magnifying glass and flag indicating suspicious activity</desc>
+
+  <!-- Background circle -->
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="url(#g)" />
+
+  <!-- chat bubble -->
+  <path d="M19 22c0-4.97 4.53-9 10-9s10 4.03 10 9-4.53 9-10 9H26l-6 5V31c-2.21 0-4-1.79-4-4z"
+        fill="#fff" opacity="0.98" />
+
+  <!-- magnifying glass (handle + circle) -->
+  <g transform="translate(36,36) rotate(-20) translate(-36,-36)">
+    <circle cx="44" cy="44" r="7.2" fill="none" stroke="#0f172a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
+    <rect x="49" y="49" width="10" height="3.6" rx="1.8" transform="rotate(45 54 51.8)" fill="#0f172a" />
+  </g>
+
+  <!-- small flag/marker (suspicious indicator) -->
+  <path d="M42 18 L42 27 L49 22.5 Z" fill="#ef4444" stroke="#b91c1c" stroke-width="0.6" />
+
+  <!-- subtle inner details: bubble text lines -->
+  <g opacity="0.14">
+    <rect x="25" y="24" width="14" height="2.6" rx="1.3" fill="#0f172a" />
+    <rect x="25" y="29" width="10" height="2.6" rx="1.3" fill="#0f172a" />
+  </g>
+
+  <!-- outer ring highlight -->
+  <circle cx="32" cy="32" r="30" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2" />
+</svg>
